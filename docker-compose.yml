@@ -43,8 +43,8 @@ services:
       - "81:80"
     networks:
       - mynetwork  
-    volumes:
-      - ./DevopsClassFront/dist:/usr/share/nginx/html
+    # volumes:
+    #   - ./DevopsClassFront/dist:/usr/share/nginx/html
 
 networks:
   mynetwork:
