@@ -44,7 +44,7 @@ services:
     networks:
       - mynetwork  
     volumes:
-      - ./DevopsClassFront/dist:/usr/share/nginx/html
+      - ./DevopsClassFront:/usr/share/nginx/html
 
 networks:
   mynetwork:
