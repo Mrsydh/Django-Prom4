@@ -14,6 +14,10 @@ pipeline {
                         docker compose version
                         '''
                     
+                    // Build Docker images
+                    sh '''
+                        docker-compose build
+                    '''
                 }
             }
         }
