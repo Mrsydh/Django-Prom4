@@ -16,11 +16,32 @@ pipeline {
                     
                     // Build Docker images
                     sh '''
-                        docker compose build
+                        docker compose build --no-cache
+                    '''
+
+                    sh '''
+                        docker compose down
                     '''
                 }
             }
         }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Rebuild and start containers
+                    sh '''
+                        docker compose up -d --build
+                    '''
+                    
+                    // Optionally, check the status of running containers
+                    sh '''
+                        ps
+                    '''
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 script {
