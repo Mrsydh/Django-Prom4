@@ -16,7 +16,7 @@ pipeline {
                     
                     // Build Docker images
                     sh '''
-                        docker-compose build
+                        docker compose build
                     '''
                 }
             }
